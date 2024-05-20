@@ -4,8 +4,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="Coder" content="Alfian">
-    <link rel="stylesheet" href="css/style.css"
-    
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -40,31 +39,61 @@ t = Tinggi Segitiga
                 <input type="number" id="tinggi">
             </div>
         </form>
-        <input type="button" onClick="luas()" Value="Hitung" />
+        <input type="button" onClick="luas()" value="Hitung" />
+        <input type="button" onClick="resetLuas()" value="Reset" />
         <p>Luas = <span id="luas"></span></p>
         <hr />
         <h1 id="JudulKelilingSegitiga">Hitung Keliling Segitiga</h1>
         <p1>Keliling = a + b + c</p1>
         <p></p>
         <form class="keliling">
-            <label for="">Sisi a</label>
+            <label for="a">Sisi a</label>
             <div class="a">
                 <input type="number" id="a">
             </div>
-            <label for="">Sisi b</label>
+            <label for="b">Sisi b</label>
             <div class="b">
                 <input type="number" id="b">
             </div>
-            <label for="">Sisi c</label>
+            <label for="c">Sisi c</label>
             <div class="c">
                 <input type="number" id="c">
             </div>
         </form>
-        <input type="button" onClick="keliling()" Value="Hitung" />
+        <input type="button" onClick="keliling()" value="Hitung" />
+        <input type="button" onClick="resetKeliling()" value="Reset" />
         <p>Keliling = <span id="keliling"></span></p>
     </div>
     <script src="js/script.js"></script>
+    <script>
+        function luas() {
+            const alas = document.getElementById('alas').value;
+            const tinggi = document.getElementById('tinggi').value;
+            const hasilLuas = (alas * tinggi) / 2;
+            document.getElementById('luas').textContent = hasilLuas;
+        }
 
+        function keliling() {
+            const a = document.getElementById('a').value;
+            const b = document.getElementById('b').value;
+            const c = document.getElementById('c').value;
+            const hasilKeliling = parseFloat(a) + parseFloat(b) + parseFloat(c);
+            document.getElementById('keliling').textContent = hasilKeliling;
+        }
+
+        function resetLuas() {
+            document.getElementById('alas').value = '';
+            document.getElementById('tinggi').value = '';
+            document.getElementById('luas').textContent = '';
+        }
+
+        function resetKeliling() {
+            document.getElementById('a').value = '';
+            document.getElementById('b').value = '';
+            document.getElementById('c').value = '';
+            document.getElementById('keliling').textContent = '';
+        }
+    </script>
 </body>
 
 </html>
