@@ -67,6 +67,10 @@ input[type="number"] {
     box-sizing: border-box;
 }
 
+.button-container {
+    text-align: center;
+}
+
 input[type="button"] {
     display: inline-block;
     padding: 10px 20px;
